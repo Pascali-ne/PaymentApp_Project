@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <a href="/" class="back-link">← Back to Payment Form</a>
+        
+        <h1>Payment Dashboard</h1>
+        
+        <div id="stats">
+            <div class="stats-card">
+                <h3>Loading Statistics...</h3>
+                <div class="loading">Please wait while we load your payment statistics...</div>
+            </div>
+        </div>
+
+        <div class="charts-container" id="charts">
+            <h3>Charts</h3>
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <div class="chart-title">Payments by Status</div>
+                    <canvas id="statusChart" width="520" height="320"></canvas>
+                    <div class="chart-caption" id="statusChartCaption"></div>
+                </div>
+                <div class="chart-card">
+                    <div class="chart-title">Revenue (Successful) - Last 7 Days</div>
+                    <canvas id="revenueChart" width="520" height="320"></canvas>
+                    <div class="chart-caption" id="revenueChartCaption"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="payments-container">
+            <h3>Recent Payments</h3>
+            <div class="filter-bar" aria-label="Payment list filters">
+                <input
+                    type="text"
+                    id="paymentSearch"
+                    placeholder="Search name, email, or phone"
+                    autocomplete="off"
+                >
+                <select id="paymentStatusFilter" aria-label="Filter by status">
+                    <option value="all" selected>All statuses</option>
+                    <option value="pending">Pending</option>
+                    <option value="successful">Successful</option>
+                    <option value="failed">Failed</option>
+                </select>
+                <select id="paymentSort" aria-label="Sort payments">
+                    <option value="newest" selected>Newest first</option>
+                    <option value="oldest">Oldest first</option>
+                    <option value="amount_high">Amount: High to low</option>
+                    <option value="amount_low">Amount: Low to high</option>
+                </select>
+            </div>
+            <div id="paymentListMeta" class="chart-caption"></div>
+            <ul id="paymentList">
+                <li class="loading">Loading payment history...</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

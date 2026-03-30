@@ -1,0 +1,24 @@
+[Unit]
+Description=PaymentApp Node.js service
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/paymentapp
+EnvironmentFile=/opt/paymentapp/.env
+Environment=NODE_ENV=production
+# Persist SQLite DB outside the repo directory
+Environment=DB_PATH=/var/lib/paymentapp/payments.db
+ExecStart=/usr/bin/node /opt/paymentapp/server.js
+Restart=always
+RestartSec=2
+User=www-data
+Group=www-data
+
+# Hardening (safe defaults for student deployments)
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
+
