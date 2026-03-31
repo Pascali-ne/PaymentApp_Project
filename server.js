@@ -20,7 +20,6 @@ const db = new Database();
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static('public'));
 
 // Add custom header to identify server instance
 app.use((req, res, next) => {
@@ -28,6 +27,9 @@ app.use((req, res, next) => {
     res.setHeader('X-Served-By', `Payment-Server-${host}:${PORT}`);
     next();
 });
+
+// Static files (frontend)
+app.use(express.static('public'));
 
 // Routes
 app.get('/', (req, res) => {
