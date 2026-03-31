@@ -13,7 +13,7 @@ PaymentApp is a small payment platform that demonstrates **real‑world API inte
 
 - **Website URL**: `http://32.193.244.84/`
 - **Dashboard**: `http://32.193.244.84/dashboard`
-- **Demo video**: _add your video link here_
+- **Demo video**: https://youtu.be/7Y4dUgQPr1I
 
 ---
 
