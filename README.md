@@ -223,7 +223,7 @@ curl -sS -I http://127.0.0.1/ | head
 
 ---
 
-## Load balancer testing (for the rubric)
+## Load balancer testing
 
 ### 1) Confirm requests hit different backends
 
@@ -261,13 +261,3 @@ Using a browser:
   - Dashboard API failures
 
 ---
-
-## Demo video checklist
-
-To match the rubric and keep the video under **2 minutes**:
-
-1. Show the payment page loading via the LB URL (`http://32.193.244.84/`).
-2. Demonstrate currency conversion using the external exchange‑rate API.
-3. Trigger the Flutterwave checkout window.
-4. Open the dashboard, show payments, and use search/filter.
-5. In a terminal, run `curl -sSI http://32.193.244.84/ | grep -i x-served-by` a few times to prove that the load balancer distributes traffic across `web01` and `web02`.
